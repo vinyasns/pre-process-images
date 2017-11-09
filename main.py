@@ -21,7 +21,6 @@ src_path_root = 'img/'
 dest_path_root = 'out/'
 if not os.path.exists(dest_path_root):
     os.makedirs(dest_path_root)
-
 sub_dirs = get_immediate_subdirectories(src_path_root)
 for directory in sub_dirs:
     src_path = join(src_path_root, directory)
@@ -29,7 +28,6 @@ for directory in sub_dirs:
     if not os.path.exists(dest_path):
         os.makedirs(dest_path)
     onlyfiles = [f for f in listdir(src_path) if isfile(join(src_path, f))]
-
     for index, file in enumerate(onlyfiles):
         image = cv2.imread(join(src_path, file))
         image_pixels_height = int(image.shape[0] * image_pixels_width / image.shape[1])
